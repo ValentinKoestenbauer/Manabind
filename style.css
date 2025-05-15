@@ -1,10 +1,11 @@
 body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(to bottom, #24160a, #231509);
+  background: linear-gradient(145deg, #1a1008, #3a2512, #5c3c1e);
   color: #f5f0e6;
   font-family: Arial, sans-serif;
-  transition: background 0.6s ease;
+  height: 100vh;
+  overflow: hidden;
 }
 
 h1 {
