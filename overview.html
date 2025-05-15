@@ -25,3 +25,13 @@
   </div>
 </body>
 </html>
+<script>
+  function enterSite() {
+    const logo = document.querySelector('.logo');
+    logo.style.transform = 'scale(20)';
+    logo.style.opacity = '0';
+    setTimeout(() => {
+      window.location.href = 'overview.html';
+    }, 700);
+  }
+</script>
