@@ -3,39 +3,11 @@
 body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(to bottom, #24160a, #231509);
+  background: url('images/manabind_farbe.png') center center / cover no-repeat;
   color: #f5f0e6;
   font-family: Arial, sans-serif;
-  transition: background 0.6s ease;
-}
-
-h1 {
-  font-family: 'Cinzel Decorative', serif;
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-button {
-  font-size: 1.2rem;
-  padding: 1rem 2rem;
-  border: none;
-  background-color: #49270c;
-  color: #f5f0e6;
-  font-family: Arial, sans-serif;
-  cursor: pointer;
-  animation: pulse 1.5s infinite;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #44240b;
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.05); opacity: 0.8; }
-  100% { transform: scale(1); opacity: 1; }
+  height: 100vh;
+  overflow: hidden;
 }
 
 .centered {
@@ -49,7 +21,21 @@ button:hover {
 
 img.logo {
   max-width: 300px;
-  margin-bottom: 2rem;
+  animation: pulse 2s infinite, glow 3s ease-in-out infinite;
+  cursor: pointer;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes glow {
+  0% { filter: drop-shadow(0 0 0px gold); }
+  50% { filter: drop-shadow(0 0 20px gold); }
+  100% { filter: drop-shadow(0 0 0px gold); }
 }
 
 /* === index.html === */
@@ -57,16 +43,25 @@ img.logo {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Manabind</title>
-  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function enterSite() {
+      const logo = document.querySelector('.logo');
+      logo.style.transform = 'scale(20)';
+      logo.style.opacity = '0';
+      setTimeout(() => {
+        window.location.href = 'overview.html';
+      }, 700);
+    }
+  </script>
 </head>
 <body>
   <div class="centered">
-    <img src="images/manabind-logo.png" alt="Manabind Logo" class="logo">
-    <button onclick="window.location.href='overview.html'">Press Me</button>
+    <img src="images/manabind-logo.png" alt="" class="logo" onclick="enterSite()">
   </div>
 </body>
 </html>
@@ -76,11 +71,11 @@ img.logo {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Manabind Overview</title>
-  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="centered">
