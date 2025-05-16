@@ -216,3 +216,40 @@ Bearbeiten
   z-index: 1000;
   display: none;
 }
+.site-header {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 1rem 0;
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.8rem;
+}
+
+.site-header a {
+  color: #f5f0e6;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.site-header a:hover {
+  color: gold;
+}
+
+.back-link {
+  display: inline-block;
+  text-align: center;
+  margin: 2rem auto;
+  color: #f5f0e6;
+  font-family: Arial, sans-serif;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.6rem 1rem;
+  border: 2px solid #f5f0e6;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.back-link:hover {
+  background-color: gold;
+  color: #1a1008;
+  border-color: gold;
+}
