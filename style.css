@@ -116,23 +116,28 @@ h1 {
   margin-bottom: 1rem;
 }
 
-.card-section {
+/* Kartenbereich – ohne Box */
+.card-section.cards {
   max-width: 800px;
   margin: 2rem auto;
-  padding: 1rem;
   text-align: center;
 }
 
-.card-section h2 {
-  font-family: 'Cinzel Decorative', serif;
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
+/* Textbereich – mit schöner Box */
+.card-section.textbox {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: rgba(20, 15, 10, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  backdrop-filter: blur(3px);
+  font-family: 'Merriweather', serif;
+  color: #f0e6d2;
+  text-align: justify;
 }
 
-.card-section p {
-  font-size: 1rem;
-  margin-bottom: 1.5rem;
-}
 
 .download-link {
   display: inline-block;
