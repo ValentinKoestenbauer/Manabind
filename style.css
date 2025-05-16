@@ -1,5 +1,6 @@
 /* === style.css === */
 
+/* Grundlayout */
 body {
   margin: 0;
   padding: 0;
@@ -16,6 +17,15 @@ body {
   to { opacity: 1; }
 }
 
+/* Hauptüberschrift */
+h1 {
+  text-align: center;
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 2.5rem;
+  margin-top: 60px;
+}
+
+/* Navigation (optional für spätere Seiten) */
 nav {
   background-color: rgba(0, 0, 0, 0.3);
   padding: 1rem;
@@ -41,13 +51,7 @@ nav a:hover {
   background-color: rgba(255, 215, 0, 0.1);
 }
 
-h1 {
-  text-align: center;
-  font-family: 'Cinzel Decorative', serif;
-  font-size: 2.5rem;
-  margin-top: 60px;
-}
-
+/* Menü */
 .menu {
   display: flex;
   flex-direction: column;
@@ -68,21 +72,43 @@ h1 {
   transition: all 0.3s ease;
 }
 
+.menu a span {
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  display: block;
+  margin-top: 0.3rem;
+  opacity: 0.85;
+}
+
 .menu a:hover {
   background-color: gold;
   color: #1a1008;
   border-color: gold;
 }
 
+/* Zurück-Button */
 .back-link {
   display: block;
-  text-align: center;
+  width: fit-content;
   margin: 2rem auto;
   color: #f5f0e6;
   font-family: Arial, sans-serif;
-  text-decoration: underline;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.6rem 1.5rem;
+  border: 2px solid #f5f0e6;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  text-align: center;
 }
 
+.back-link:hover {
+  background-color: gold;
+  color: #1a1008;
+  border-color: gold;
+}
+
+/* Kartenraster (z. B. in cards.html) */
 .color-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -109,11 +135,13 @@ h1 {
   border-color: gold;
 }
 
+/* Kartenbilder */
 .card-preview {
   max-width: 100%;
   height: auto;
   border-radius: 6px;
   margin-bottom: 1rem;
+  cursor: pointer;
 }
 
 /* Kartenbereich – ohne Box */
@@ -138,7 +166,7 @@ h1 {
   text-align: justify;
 }
 
-
+/* Download-Button */
 .download-link {
   display: inline-block;
   margin-top: 1rem;
@@ -155,6 +183,8 @@ h1 {
   color: #1a1008;
   border-color: gold;
 }
+
+/* Startseiten-Logo */
 .centered {
   height: 100vh;
   display: flex;
@@ -172,6 +202,7 @@ img.logo {
   display: block;
 }
 
+/* Effekte für Startlogo */
 @keyframes pulse {
   0% { transform: scale(1); }
   50% { transform: scale(1.05); }
@@ -183,19 +214,8 @@ img.logo {
   50% { filter: drop-shadow(0 0 20px gold); }
   100% { filter: drop-shadow(0 0 0px gold); }
 }
-so:
 
-css
-Kopieren
-Bearbeiten
-.menu a span {
-  font-family: Arial, sans-serif;
-  font-size: 0.9rem;
-  display: block;
-  margin-top: 0.3rem;
-  opacity: 0.85;
-}
-/* Zoom-Effekt für Karten */
+/* Karten-Zoom */
 .card-preview.enlarged {
   position: fixed;
   top: 50%;
@@ -210,7 +230,7 @@ Bearbeiten
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Overlay-Hintergrund */
+/* Overlay für Zoom */
 .card-zoom-overlay {
   position: fixed;
   top: 0;
@@ -221,6 +241,8 @@ Bearbeiten
   z-index: 1000;
   display: none;
 }
+
+/* Manabind-Kopfzeile */
 .site-header {
   text-align: center;
   background-color: rgba(0, 0, 0, 0.2);
@@ -237,38 +259,4 @@ Bearbeiten
 
 .site-header a:hover {
   color: gold;
-}
-
-.back-link {
-  display: block;
-  width: fit-content;
-  margin: 2rem auto;
-  color: #f5f0e6;
-  font-family: Arial, sans-serif;
-  text-decoration: none;
-  font-size: 1rem;
-  padding: 0.6rem 1.5rem;
-  border: 2px solid #f5f0e6;
-  border-radius: 30px;
-  transition: all 0.3s ease;
-  text-align: center;
-}
-
-.back-link:hover {
-  background-color: gold;
-  color: #1a1008;
-  border-color: gold;
-}
-.card-section {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background-color: rgba(20, 15, 10, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.4);
-  backdrop-filter: blur(3px);
-  font-family: 'Merriweather', serif;
-  color: #f0e6d2;
-  text-align: justify;
 }
