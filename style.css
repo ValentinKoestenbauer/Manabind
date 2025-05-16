@@ -178,3 +178,15 @@ img.logo {
   50% { filter: drop-shadow(0 0 20px gold); }
   100% { filter: drop-shadow(0 0 0px gold); }
 }
+so:
+
+css
+Kopieren
+Bearbeiten
+.menu a span {
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  display: block;
+  margin-top: 0.3rem;
+  opacity: 0.85;
+}
