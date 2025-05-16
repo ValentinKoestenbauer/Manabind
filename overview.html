@@ -6,113 +6,79 @@ body {
   background: linear-gradient(145deg, #1a1008, #3a2512, #5c3c1e);
   color: #f5f0e6;
   font-family: Arial, sans-serif;
-  height: 100vh;
+  min-height: 100vh;
   overflow-x: hidden;
+  animation: fadeIn 0.6s ease-in;
 }
 
-.centered {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-img.logo {
-  max-width: 300px;
-  animation: pulse 2s infinite, glow 3s ease-in-out infinite;
-  cursor: pointer;
-  transition: transform 0.6s ease, opacity 0.6s ease;
-  display: block;
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
-
-@keyframes glow {
-  0% { filter: drop-shadow(0 0 0px gold); }
-  50% { filter: drop-shadow(0 0 20px gold); }
-  100% { filter: drop-shadow(0 0 0px gold); }
-}
-
-/* Navigation */
 nav {
   background-color: rgba(0, 0, 0, 0.3);
-  position: sticky;
-  top: 0;
   padding: 1rem;
   display: flex;
   justify-content: center;
-  z-index: 1000;
+  flex-wrap: wrap;
 }
 
 nav a {
-  margin: 0 1rem;
+  margin: 0.5rem 1rem;
   text-decoration: none;
   color: #f5f0e6;
   font-family: 'Cinzel Decorative', serif;
-  font-size: 1.1rem;
-  transition: color 0.3s ease;
+  font-size: 1.2rem;
+  border: 2px solid transparent;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
 }
 
 nav a:hover {
   color: gold;
+  border-color: gold;
+  background-color: rgba(255, 215, 0, 0.1);
 }
 
-section {
-  padding: 80px 20px;
-  max-width: 800px;
-  margin: auto;
-  font-family: Arial, sans-serif;
-}
-
-section h2 {
+h1 {
+  text-align: center;
   font-family: 'Cinzel Decorative', serif;
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  margin-top: 60px;
 }
 
-/* === overview.html === */
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Manabind Overview</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#howto">How to Play</a>
-    <a href="#cards">Card & Decks</a>
-    <a href="#contact">Contact</a>
-  </nav>
+.menu a {
+  display: block;
+  margin: 1rem;
+  font-size: 1.2rem;
+  color: #f5f0e6;
+  text-decoration: none;
+  border: 2px solid #f5f0e6;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  font-family: 'Cinzel Decorative', serif;
+  transition: all 0.3s ease;
+}
 
-  <section id="about">
-    <h2>About Manabind</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquam ligula sed odio congue feugiat.</p>
-  </section>
+.menu a:hover {
+  background-color: gold;
+  color: #1a1008;
+  border-color: gold;
+}
 
-  <section id="howto">
-    <h2>How to Play / Rulings</h2>
-    <p>Phasellus nec ligula non justo varius blandit. Vivamus sagittis nisl sed libero malesuada tincidunt.</p>
-  </section>
-
-  <section id="cards">
-    <h2>Card & Deck Overview</h2>
-    <p>Suspendisse potenti. Donec luctus, tortor sed dignissim pretium, arcu mi blandit leo, sed iaculis libero enim eu nunc.</p>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email us at <a href="mailto:info@manabind.com">info@manabind.com</a> or follow us on social media.</p>
-  </section>
-</body>
-</html>
+.back-link {
+  display: block;
+  text-align: center;
+  margin: 2rem auto;
+  color: #f5f0e6;
+  font-family: Arial, sans-serif;
+  text-decoration: underline;
+}
