@@ -235,17 +235,18 @@ Bearbeiten
 }
 
 .back-link {
-  display: inline-block;
-  text-align: center;
+  display: block;
+  width: fit-content;
   margin: 2rem auto;
   color: #f5f0e6;
   font-family: Arial, sans-serif;
   text-decoration: none;
   font-size: 1rem;
-  padding: 0.6rem 1rem;
+  padding: 0.6rem 1.5rem;
   border: 2px solid #f5f0e6;
   border-radius: 30px;
   transition: all 0.3s ease;
+  text-align: center;
 }
 
 .back-link:hover {
