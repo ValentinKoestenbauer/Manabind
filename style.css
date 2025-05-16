@@ -16,7 +16,6 @@ body {
   to { opacity: 1; }
 }
 
-/* Navigation (falls du sie später global verwendest) */
 nav {
   background-color: rgba(0, 0, 0, 0.3);
   padding: 1rem;
@@ -42,7 +41,6 @@ nav a:hover {
   background-color: rgba(255, 215, 0, 0.1);
 }
 
-/* Hauptüberschrift */
 h1 {
   text-align: center;
   font-family: 'Cinzel Decorative', serif;
@@ -50,7 +48,6 @@ h1 {
   margin-top: 60px;
 }
 
-/* Menübereich auf overview.html */
 .menu {
   display: flex;
   flex-direction: column;
@@ -77,7 +74,6 @@ h1 {
   border-color: gold;
 }
 
-/* Link zurück zur Übersicht */
 .back-link {
   display: block;
   text-align: center;
@@ -86,31 +82,71 @@ h1 {
   font-family: Arial, sans-serif;
   text-decoration: underline;
 }
-.centered {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+.color-card {
+  border: 2px solid #f5f0e6;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.3s ease;
+  font-family: 'Cinzel Decorative', serif;
+  text-decoration: none;
+  color: #f5f0e6;
+}
+
+.color-card:hover {
+  background-color: gold;
+  color: #1a1008;
+  border-color: gold;
+}
+
+.card-preview {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.card-section {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
   text-align: center;
 }
 
-img.logo {
-  max-width: 300px;
-  animation: pulse 2s infinite, glow 3s ease-in-out infinite;
-  cursor: pointer;
-  transition: transform 0.6s ease, opacity 0.6s ease;
-  display: block;
+.card-section h2 {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
 }
 
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
+.card-section p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
 }
 
-@keyframes glow {
-  0% { filter: drop-shadow(0 0 0px gold); }
-  50% { filter: drop-shadow(0 0 20px gold); }
-  100% { filter: drop-shadow(0 0 0px gold); }
+.download-link {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #f5f0e6;
+  color: #f5f0e6;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-family: Arial, sans-serif;
+}
+
+.download-link:hover {
+  background-color: gold;
+  color: #1a1008;
+  border-color: gold;
 }
