@@ -194,8 +194,12 @@ Bearbeiten
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(2);
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%) scale(1.8);
   z-index: 9999;
-  box-shadow: 0 0 20px gold;
+  box-shadow: 0 0 30px gold;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
