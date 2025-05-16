@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+<div class="card-zoom-overlay" id="overlay"></div>
 
   <h1>Ohm, the Whale – Dark Swarming</h1>
 
@@ -36,25 +37,33 @@
   <a href="color-violet.html" class="back-link">← Back to Violet Decks</a>
 <script>
   const cards = document.querySelectorAll('.card-preview');
+  const overlay = document.getElementById('overlay');
 
   cards.forEach(card => {
     card.addEventListener('click', (e) => {
-      // Entferne vorherige Zooms
+      // Entferne andere Vergrößerungen
       document.querySelectorAll('.card-preview.enlarged').forEach(c => {
         if (c !== card) c.classList.remove('enlarged');
       });
-      // Umschalten
-      card.classList.toggle('enlarged');
-      e.stopPropagation(); // Klick soll nicht weitergegeben werden
+
+      // Toggle Zoom
+      const isAlreadyEnlarged = card.classList.contains('enlarged');
+      document.querySelectorAll('.card-preview').forEach(c => c.classList.remove('enlarged'));
+
+      if (!isAlreadyEnlarged) {
+        card.classList.add('enlarged');
+        overlay.style.display = 'block';
+      } else {
+        overlay.style.display = 'none';
+      }
+
+      e.stopPropagation();
     });
   });
 
   document.addEventListener('click', () => {
-    document.querySelectorAll('.card-preview.enlarged').forEach(c => {
-      c.classList.remove('enlarged');
-    });
+    document.querySelectorAll('.card-preview.enlarged').forEach(c => c.classList.remove('enlarged'));
+    overlay.style.display = 'none';
   });
 </script>
 
-</body>
-</html>
