@@ -1,37 +1,118 @@
+/* === style.css === */
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(145deg, #1a1008, #3a2512, #5c3c1e);
+  color: #f5f0e6;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.centered {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+img.logo {
+  max-width: 300px;
+  animation: pulse 2s infinite, glow 3s ease-in-out infinite;
+  cursor: pointer;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  display: block;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes glow {
+  0% { filter: drop-shadow(0 0 0px gold); }
+  50% { filter: drop-shadow(0 0 20px gold); }
+  100% { filter: drop-shadow(0 0 0px gold); }
+}
+
+/* Navigation */
+nav {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+}
+
+nav a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: #f5f0e6;
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: gold;
+}
+
+section {
+  padding: 80px 20px;
+  max-width: 800px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+}
+
+section h2 {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* === overview.html === */
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Manabind Overview</title>
-
-  <!-- Cinzel Decorative Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet" />
-
-  <!-- Externes Stylesheet -->
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="centered">
-    <h1>Welcome to Manabind</h1>
-    <nav>
-      <ul>
-        <li><a href="#about">About Manabind</a></li>
-        <li><a href="#howto">How to Play / Rulings</a></li>
-        <li><a href="#cards">Card & Deck Overview</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#howto">How to Play</a>
+    <a href="#cards">Card & Decks</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Manabind</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce aliquam ligula sed odio congue feugiat.</p>
+  </section>
+
+  <section id="howto">
+    <h2>How to Play / Rulings</h2>
+    <p>Phasellus nec ligula non justo varius blandit. Vivamus sagittis nisl sed libero malesuada tincidunt.</p>
+  </section>
+
+  <section id="cards">
+    <h2>Card & Deck Overview</h2>
+    <p>Suspendisse potenti. Donec luctus, tortor sed dignissim pretium, arcu mi blandit leo, sed iaculis libero enim eu nunc.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email us at <a href="mailto:info@manabind.com">info@manabind.com</a> or follow us on social media.</p>
+  </section>
 </body>
 </html>
-<script>
-  function enterSite() {
-    const logo = document.querySelector('.logo');
-    logo.style.transform = 'scale(20)';
-    logo.style.opacity = '0';
-    setTimeout(() => {
-      window.location.href = 'overview.html';
-    }, 700);
-  }
-</script>
