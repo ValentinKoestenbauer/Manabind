@@ -254,3 +254,16 @@ Bearbeiten
   color: #1a1008;
   border-color: gold;
 }
+.card-section {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: rgba(20, 15, 10, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+  backdrop-filter: blur(3px);
+  font-family: 'Merriweather', serif;
+  color: #f0e6d2;
+  text-align: justify;
+}
