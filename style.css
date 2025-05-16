@@ -190,16 +190,29 @@ Bearbeiten
   margin-top: 0.3rem;
   opacity: 0.85;
 }
+/* Zoom-Effekt für Karten */
 .card-preview.enlarged {
   position: fixed;
   top: 50%;
   left: 50%;
-  max-width: 90vw;
-  max-height: 90vh;
+  max-width: 95vw;
+  max-height: 95vh;
   width: auto;
   height: auto;
-  transform: translate(-50%, -50%) scale(1.8);
-  z-index: 9999;
-  box-shadow: 0 0 30px gold;
+  transform: translate(-50%, -50%) scale(2.2);
+  z-index: 1001;
+  box-shadow: 0 0 40px gold;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Overlay-Hintergrund */
+.card-zoom-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(10, 10, 10, 0.75);
+  z-index: 1000;
+  display: none;
 }
