@@ -7,10 +7,10 @@ body {
   color: #f5f0e6;
   font-family: Arial, sans-serif;
   height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
-/* zentrales Layout */
+/* Zentrierter Layoutblock auf der Startseite */
 .centered {
   height: 100vh;
   display: flex;
@@ -20,7 +20,7 @@ body {
   text-align: center;
 }
 
-/* Pulsierendes, glühendes Logo */
+/* Pulsierendes Logo */
 img.logo {
   max-width: 300px;
   animation: pulse 2s infinite, glow 3s ease-in-out infinite;
@@ -29,7 +29,6 @@ img.logo {
   display: block;
 }
 
-/* Glow- und Zoom-Effekte */
 @keyframes pulse {
   0% { transform: scale(1); }
   50% { transform: scale(1.05); }
@@ -42,25 +41,40 @@ img.logo {
   100% { filter: drop-shadow(0 0 0px gold); }
 }
 
-/* Navigation auf der Overview-Seite */
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 2rem 0 0;
+/* Navigation oben */
+nav {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  padding: 1rem;
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: center;
+  justify-content: center;
+  z-index: 1000;
 }
 
-nav ul li a {
+nav a {
+  margin: 0 1rem;
   text-decoration: none;
   color: #f5f0e6;
-  font-family: Arial, sans-serif;
-  font-size: 1.2rem;
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.1rem;
   transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
-  color: #d6b38b;
+nav a:hover {
+  color: gold;
+}
+
+/* Inhaltsbereiche */
+section {
+  padding: 80px 20px;
+  max-width: 800px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+}
+
+section h2 {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
