@@ -1,36 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ohm, the Whale – Dark Swarming</title>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="site-header">
-  <a href="overview.html">Manabind</a>
-</div>
 
-<div class="card-zoom-overlay" id="overlay"></div>
+  <div class="site-header">
+    <a href="overview.html">Manabind</a>
+  </div>
 
   <h1>Ohm, the Whale – Dark Swarming</h1>
 
-  <div class="card-section">
+  <div class="card-section cards">
     <h2>Leader</h2>
     <img src="images/violet_leader_1.png" alt="Ohm, the Whale" class="card-preview" style="max-width: 200px;" />
   </div>
 
-  <div class="card-section">
+  <div class="card-section cards">
     <h2>Synergy Cards</h2>
     <img src="images/violet_card_1.png" alt="Card 1" class="card-preview" style="max-width: 150px;" />
     <img src="images/violet_card_2.png" alt="Card 2" class="card-preview" style="max-width: 150px;" />
     <img src="images/violet_card_3.png" alt="Card 3" class="card-preview" style="max-width: 150px;" />
   </div>
 
-  <div class="card-section">
+  <div class="card-section textbox">
     <h2>Deck Concept</h2>
     <p>
       This deck revolves around generating and overwhelming with tokens while maintaining tight board control through unit-based effects.
@@ -41,35 +39,38 @@
   </div>
 
   <a href="color-violet.html" class="back-link">← Back to Violet Decks</a>
-<script>
-  const cards = document.querySelectorAll('.card-preview');
-  const overlay = document.getElementById('overlay');
 
-  cards.forEach(card => {
-    card.addEventListener('click', (e) => {
-      // Entferne andere Vergrößerungen
-      document.querySelectorAll('.card-preview.enlarged').forEach(c => {
-        if (c !== card) c.classList.remove('enlarged');
+  <div class="card-zoom-overlay" id="overlay"></div>
+
+  <script>
+    const cards = document.querySelectorAll('.card-preview');
+    const overlay = document.getElementById('overlay');
+
+    cards.forEach(card => {
+      card.addEventListener('click', (e) => {
+        document.querySelectorAll('.card-preview.enlarged').forEach(c => {
+          if (c !== card) c.classList.remove('enlarged');
+        });
+
+        const isAlreadyEnlarged = card.classList.contains('enlarged');
+        document.querySelectorAll('.card-preview').forEach(c => c.classList.remove('enlarged'));
+
+        if (!isAlreadyEnlarged) {
+          card.classList.add('enlarged');
+          overlay.style.display = 'block';
+        } else {
+          overlay.style.display = 'none';
+        }
+
+        e.stopPropagation();
       });
-
-      // Toggle Zoom
-      const isAlreadyEnlarged = card.classList.contains('enlarged');
-      document.querySelectorAll('.card-preview').forEach(c => c.classList.remove('enlarged'));
-
-      if (!isAlreadyEnlarged) {
-        card.classList.add('enlarged');
-        overlay.style.display = 'block';
-      } else {
-        overlay.style.display = 'none';
-      }
-
-      e.stopPropagation();
     });
-  });
 
-  document.addEventListener('click', () => {
-    document.querySelectorAll('.card-preview.enlarged').forEach(c => c.classList.remove('enlarged'));
-    overlay.style.display = 'none';
-  });
-</script>
+    document.addEventListener('click', () => {
+      document.querySelectorAll('.card-preview.enlarged').forEach(c => c.classList.remove('enlarged'));
+      overlay.style.display = 'none';
+    });
+  </script>
 
+</body>
+</html>
