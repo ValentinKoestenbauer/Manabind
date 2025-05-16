@@ -34,6 +34,27 @@
   </div>
 
   <a href="color-violet.html" class="back-link">← Back to Violet Decks</a>
+<script>
+  const cards = document.querySelectorAll('.card-preview');
+
+  cards.forEach(card => {
+    card.addEventListener('click', (e) => {
+      // Entferne vorherige Zooms
+      document.querySelectorAll('.card-preview.enlarged').forEach(c => {
+        if (c !== card) c.classList.remove('enlarged');
+      });
+      // Umschalten
+      card.classList.toggle('enlarged');
+      e.stopPropagation(); // Klick soll nicht weitergegeben werden
+    });
+  });
+
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.card-preview.enlarged').forEach(c => {
+      c.classList.remove('enlarged');
+    });
+  });
+</script>
 
 </body>
 </html>
