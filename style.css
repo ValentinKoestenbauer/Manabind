@@ -260,3 +260,10 @@ img.logo {
 .site-header a:hover {
   color: gold;
 }
+.card-section.cards h2 {
+  font-family: 'Merriweather', serif;
+  font-size: 1.3rem;
+  color: #f0e6d2;
+  text-align: center;
+  margin-bottom: 1rem;
+}
